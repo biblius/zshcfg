@@ -31,10 +31,12 @@ USE_POWERLINE="true"
 HAS_WIDECHARS="false"
 
 # Source zsh plugins
-for file in $HOME/.zsh/*; do source "$file"; done
+for file in $HOME/.zsh/*; do
+  # Source any "file.zsh", "file.zsh-foo", and ".zshrc" files
+  if [[ $file =~ ^.*\.zsh-.+$ || $file =~ ^.*\.zshrc$ || $file =~ ^.*\.zsh$ ]]; then
+    source "$file";
+  fi
+done
 
 # To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
 [[ ! -f "$HOME/.zsh/.p10k.zsh" ]] || source "$HOME/.zsh/.p10k.zsh"
-
-# Enables vi (true chad) mode
-bindkey -v
