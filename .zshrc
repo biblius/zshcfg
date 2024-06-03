@@ -1,6 +1,10 @@
 # Start SSH agent
 eval `ssh-agent`
 
+# For true chadscension
+export EDITOR="nvim"
+alias vim=nvim
+
 # Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
@@ -20,7 +24,7 @@ fi
 
 alias l="ls -la"
 alias vimcfg="cd $HOME/.config/nvim && nvim init.lua"
-alias zshcfg="cd $HOME/.zsh && nvim .zshrc"
+alias zshcfg="nvim $HOME/.zsh/.zshrc"
 
 # Use powerline
 USE_POWERLINE="true"
