@@ -5,15 +5,15 @@ eval `ssh-agent`
 export EDITOR="nvim"
 alias vim=nvim
 
-# Source manjaro-zsh-configuration
-if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-  source /usr/share/zsh/manjaro-zsh-config
-fi
+# Configure
+source $HOME/.zsh/zsh-config.zsh
 
-# Source manjaro-zsh-prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-  source /usr/share/zsh/manjaro-zsh-prompt
-fi
+# Plugins
+source $HOME/.zsh/plugins.zsh
+
+# To customize prompt, run `p10k configure` and move the resulting file
+# to `~/.zsh/p10k.zsh` or directly edit the file.
+source $HOME/.zsh/zsh-prompt.zsh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -33,14 +33,3 @@ USE_POWERLINE="true"
 # Example:
 #    is not a diamond
 HAS_WIDECHARS="false"
-
-# Source zsh plugins
-for file in $HOME/.zsh/*; do
-  # Source any "file.zsh", "file.zsh-foo", and ".zshrc" files
-  if [[ $file =~ ^.*\.zsh-.+$ || $file =~ ^.*\.zshrc$ || $file =~ ^.*\.zsh$ ]]; then
-    source "$file";
-  fi
-done
-
-# To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
-[[ ! -f "$HOME/.zsh/.p10k.zsh" ]] || source "$HOME/.zsh/.p10k.zsh"
