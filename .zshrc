@@ -40,3 +40,6 @@ fi
 # Example:
 #    is not a diamond
 HAS_WIDECHARS="false"
+
+# Fix weird git bug
+unset ZSH_AUTOSUGGEST_USE_ASYNC
