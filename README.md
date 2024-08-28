@@ -6,7 +6,7 @@ either via instructions on page or via the `Add/Remove Software` app.
 Clone this directory to `~/.zsh` and source it via `~/.zshrc`.
 
 ```bash
-git clone git@github.com:JosipBeDa/zshcfg.git ~/.zsh
+git clone git@github.com:biblius/zshcfg.git ~/.zsh
 ```
 
 Add to `~/.zshrc`:
